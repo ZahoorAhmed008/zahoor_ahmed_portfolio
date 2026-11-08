@@ -4,7 +4,7 @@
 
 Welcome to my personal portfolio repository! This website showcases my educational background, professional experience, technical skills, projects, and achievements.
 
-🌐 **Live Portfolio:** [zahoor-ahmed.netlify.app](https://zahoor-ahmed.netlify.app)
+🌐 **Live Portfolio:** [zahoorahmedportfolio.netlify.app](https://zahoorahmedportfolio.netlify.app)
 
 ---
 
