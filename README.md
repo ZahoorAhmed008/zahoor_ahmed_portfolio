@@ -113,7 +113,7 @@ This portfolio is hosted on **Netlify** and connected directly to GitHub.
 
 Every time new changes are pushed to the `main` branch, Netlify automatically deploys the updated website.
 
-**Live Website:** [https://zahoor-ahmed.netlify.app](https://zahoor-ahmed.netlify.app)
+**Live Website:** [https://zahoorahmedportfolio.netlify.app](https://zahoorahmedportfolio.netlify.app)
 
 ---
 
