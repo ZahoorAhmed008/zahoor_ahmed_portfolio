@@ -111,13 +111,13 @@ h3{font-size:24px;margin:0 0 22px;font-weight:700;color:var(--ink)}h3 .kw{margin
 .tl .card{position:relative}.tl .card::before{content:"";position:absolute;left:-34px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--cy)}
 .when{color:var(--cy);font-size:14px;margin:4px 0 10px;font-family:var(--mono)}
 ul{margin:0;padding-left:20px;color:var(--txt)}li{margin:5px 0}li::marker{color:var(--cy)}
-.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:24px}
 .sk .card{padding:30px 24px;margin:0}.sk h4{text-align:center;font-size:20px;margin-bottom:24px;transition:color .3s}.sk .card:hover h4{color:var(--cy)}
 .bar{margin-bottom:18px}.bar .l{display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:7px;color:var(--txt)}.bar .l b{color:var(--cy);font-weight:600;font-family:var(--mono)}
 .trk{height:8px;border-radius:9px;background:var(--trk);overflow:hidden}
 .fill{height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--cy),var(--bl));transition:width 1.5s cubic-bezier(.2,.8,.2,1)}
 .lc{text-align:center}.lc h4{color:var(--cy);font-size:20px;margin-bottom:12px}.lc p{color:var(--txt);margin:0}.lc .tags{justify-content:center}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:24px}
 .pc{background:var(--card);border:1px solid var(--bd);border-radius:calc(var(--r) + 2px);overflow:hidden;box-shadow:var(--cardsh);transition:transform .35s,border-color .35s,box-shadow .35s}
 .pc:hover{transform:translateY(-10px);border-color:var(--hov);box-shadow:0 26px 50px -24px var(--cy)}
 .pv{height:200px;overflow:hidden;background:#06121c}.pv img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}.pv img.top{object-position:top;background:#fff}.pc:hover .pv img{transform:scale(1.08)}
@@ -136,7 +136,45 @@ button.btn.p{width:100%;margin:0;padding:15px;border-radius:10px;border:0;color:
 footer{text-align:center;padding:36px 0 56px;border-top:1px solid var(--bd);color:var(--mute);font-size:14px;background:var(--bg)}
 footer p{margin:4px 0}
 .tf *{transition:background-color .4s,color .4s,border-color .4s,box-shadow .4s!important}
-@media (max-width:820px){.two{grid-template-columns:1fr;gap:34px}.nav{gap:14px}.nav a{font-size:12px}.logo{font-size:17px}.s1,.s4{display:none}header .wrap{gap:12px}}
+.hr{display:flex;gap:10px;align-items:center}.mb{display:none}
+.mb .bars{display:grid;gap:4px}.mb i{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .3s,opacity .2s}
+.mb[aria-expanded="true"] i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mb[aria-expanded="true"] i:nth-child(2){opacity:0}
+.mb[aria-expanded="true"] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:820px){
+.wrap{padding:0 20px}
+header .wrap{height:60px;gap:12px}
+.hr{margin-left:auto}.mb{display:grid}.mb:hover{transform:none}
+.logo{font-size:20px}
+.nav{position:absolute;left:0;right:0;top:100%;margin:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--hbd);box-shadow:0 26px 40px -22px rgba(0,0,0,.55);padding:6px 0 10px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s}
+.nav.open{opacity:1;visibility:visible;transform:none}
+.nav a{font-size:17px;padding:15px 24px;border-bottom:1px solid var(--bd)}
+.nav a:last-child{border-bottom:0}
+.nav a::after{display:none}
+.hero{min-height:auto;padding:64px 0 72px}
+.badge{font-size:13px;padding:7px 16px}
+h1{font-size:min(8.6vw,52px);margin:22px 0 22px}
+.role{font-size:clamp(15px,4.5vw,34px);margin-bottom:26px}
+.lead{font-size:15px;line-height:1.75;margin-bottom:30px;text-wrap:balance}.lead .bk{display:none}
+.hero .btn{display:block;width:100%;max-width:320px;margin:0 auto 14px;padding:15px 20px}
+.soc{gap:16px;margin-top:22px}.ib{width:54px;height:54px}
+.mouse,.s1,.s4{display:none}
+.s2{width:70px;height:70px;right:5%;top:12%}.s3{width:56px;height:56px;right:8%;bottom:4%}
+#prog{width:4px}
+section{padding:64px 0}
+h2{font-size:min(6vw,40px);margin-bottom:40px}h2::after{width:72px;margin-top:14px}
+h3{font-size:20px;margin-bottom:16px}
+.two{grid-template-columns:1fr;gap:34px}
+.card{padding:20px;margin-bottom:16px}.card h4{font-size:17px}
+.abt p,.cl p{font-size:15.5px;max-width:none}
+.tg{font-size:12px;padding:4px 12px}.tags{gap:8px}
+.tl{padding-left:28px}.tl .card::before{left:-28px;top:26px}
+.sk .card{padding:22px 20px}
+.pv{height:180px}.pb{padding:18px}
+.more{margin-top:28px}
+.ct{gap:14px;margin-bottom:18px}.ct a,.ct span{font-size:14px}
+footer{padding:28px 0 40px}
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.hero .a{opacity:1;transform:none}.fill{width:var(--w)}}
 </style>
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -154,7 +192,7 @@ footer p{margin:4px 0}
 </defs></svg>
 <div id="prog"></div>
 <header><div class="wrap"><a class="logo gt" href="#top">&lt;ZA/&gt;</a>
-<nav class="nav" aria-label="Sections"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav><button id="th" class="tgl" type="button" aria-label="Switch to light theme"><svg class="s sun"><use href="#sun"/></svg><svg class="s moon"><use href="#moon"/></svg></button></div></header>
+<nav class="nav" id="nav" aria-label="Sections"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav><div class="hr"><button id="th" class="tgl" type="button" aria-label="Switch to light theme"><svg class="s sun"><use href="#sun"/></svg><svg class="s moon"><use href="#moon"/></svg></button><button id="mb" class="tgl mb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span class="bars"><i></i><i></i><i></i></span></button></div></div></header>
 <main id="top">
 <div class="hero">
 <div id="code" aria-hidden="true"></div>
@@ -163,7 +201,7 @@ footer p{margin:4px 0}
 <span class="badge a"><i class="dot"></i>Available for opportunities</span>
 <h1 class="a" style="animation-delay:.2s">&lt;Zahoor Ahmed/&gt;</h1>
 <p class="role a" style="animation-delay:.4s"><span class="kw">const</span> <span class="rn">role</span> <span class="eq">=</span><span class="str">'<span id="tw">Software Engineer</span>'</span><span class="cur"></span></p>
-<p class="lead a" style="animation-delay:.6s">Passionate about building apps and data-driven, intelligent systems<br>Fresh Software Engineering graduate, keen on research and innovation</p>
+<p class="lead a" style="animation-delay:.6s">Passionate about building apps and data-driven, intelligent systems<br class="bk"> Fresh Software Engineering graduate, keen on research and innovation</p>
 <div class="a" style="animation-delay:.8s"><a class="btn p" href="https://drive.google.com/file/d/1MnMTcXGPJzTXeqXTv_JBqFmuZBwHK0gV/view?usp=drive_link" target="_blank" rel="noopener">Download My CV</a><a class="btn o" href="#projects">View Projects</a>
 <div class="soc"><a class="ib" href="https://github.com/ZahoorAhmed008" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i"><use href="#gh"/></svg></a><a class="ib" href="https://www.linkedin.com/in/zahoor-ahmed-410944232/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="#li"/></svg></a><a class="ib" href="mailto:za0389188@gmail.com" aria-label="Email"><svg class="s"><use href="#ml"/></svg></a></div></div>
 </div><span class="mouse" aria-hidden="true"></span></div>
@@ -227,7 +265,7 @@ footer p{margin:4px 0}
 <script>
 (function(){
 var red=matchMedia("(prefers-reduced-motion:reduce)").matches;
-var W=["return","if","else","for","while"],code=document.getElementById("code"),n=Math.max(8,Math.floor(innerWidth/96)),h="";
+var W=["return","if","else","for","while"],code=document.getElementById("code"),n=Math.max(4,Math.floor(innerWidth/96)),h="";
 for(var i=0;i<n;i++){h+='<div style="animation-delay:'+(-Math.random()*5).toFixed(1)+'s;animation-duration:'+(3+Math.random()*4).toFixed(1)+'s">'+W.map(function(w){return"<span>"+w+"</span>"}).join("")+"</div>"}
 code.innerHTML=h;
 var G=[["Mobile & Web",[["Flutter",80],["HTML5 / CSS3",85],["JavaScript",75],["Bootstrap",80],["Firebase",75]]],["Programming",[["Python",80],["Java",75],["PHP",65],["MySQL",75]]],["Design Tools",[["Figma",90],["Photoshop",75],["Illustrator",70],["Canva",85]]],["Data & Tools",[["Data Science",70],["LSTM Forecasting",70],["Git",75],["AWS",60]]]];
@@ -242,6 +280,13 @@ addEventListener("scroll",sc,{passive:true});sc();
 var cf=document.getElementById("cf"),sb=cf.querySelector("button"),st=document.createElement("p");st.setAttribute("role","status");st.style.cssText="margin:14px 0 0;font-size:14px;min-height:1.4em";cf.appendChild(st);
 cf.addEventListener("submit",function(ev){ev.preventDefault();var a=document.getElementById("n").value,b=document.getElementById("e").value,c=document.getElementById("m").value;sb.disabled=true;sb.textContent="Sending...";st.style.color="#9aa7b8";st.textContent="";
 fetch("https://formsubmit.co/ajax/za0389188@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:a,email:b,message:c,_subject:"Portfolio message from "+a,_template:"table",_captcha:"false"})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(){st.style.color="#4ade80";st.textContent="Message sent. Thank you, I will reply soon.";cf.reset()}).catch(function(){st.style.color="#ffc107";st.textContent="Could not send directly, opening your email app instead.";location.href="mailto:za0389188@gmail.com?subject="+encodeURIComponent("Portfolio message from "+a)+"&body="+encodeURIComponent(c+"%0A%0A"+a+" ("+b+")")}).then(function(){sb.disabled=false;sb.textContent="Send Message"})});
+var mb=document.getElementById("mb"),nv=document.getElementById("nav");
+function cm(){nv.classList.remove("open");mb.setAttribute("aria-expanded","false");mb.setAttribute("aria-label","Open menu")}
+mb.addEventListener("click",function(e){e.stopPropagation();var o=nv.classList.toggle("open");mb.setAttribute("aria-expanded",String(o));mb.setAttribute("aria-label",o?"Close menu":"Open menu")});
+nv.addEventListener("click",function(e){if(e.target.tagName==="A")cm()});
+document.addEventListener("click",function(e){if(!nv.contains(e.target))cm()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")cm()});
+addEventListener("resize",function(){if(innerWidth>820)cm()});
 var th=document.getElementById("th"),rt=document.documentElement;
 function lab(){th.setAttribute("aria-label",rt.getAttribute("data-theme")==="light"?"Switch to dark theme":"Switch to light theme")}lab();
 th.addEventListener("click",function(){var n=rt.getAttribute("data-theme")==="light"?"dark":"light";rt.classList.add("tf");rt.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}lab();setTimeout(function(){rt.classList.remove("tf")},500)});
